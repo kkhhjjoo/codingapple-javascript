@@ -5,3 +5,11 @@
 .list-group {
   display: none !important;
 }
+
+
+.modal.show {
+  display: block !important;
+}
+.modal {
+  display: none !important;
+}
