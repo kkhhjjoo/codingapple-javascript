@@ -1,0 +1,34 @@
+.list-group.show {
+  display: block !important;
+}  
+
+.list-group {
+  display: none !important;
+}
+
+.white-bg {
+  background-color: white;
+  height: 300px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  padding-left: 20px; 
+}
+.black-bg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: rgba(0,0,0,0.5);
+  z-index: 5;
+  padding: 30px;
+  visibility : hidden;
+  opacity : 0;
+  transition: all 1s;
+}
+
+.show-modal {
+  visibility : visible;
+  opacity : 1;
+}
