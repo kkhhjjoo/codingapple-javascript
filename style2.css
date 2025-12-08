@@ -1,9 +1,13 @@
 .list-group.show {
-  display: block !important;
+  display: block;
+  overflow: visible !important;
+  height: auto !important;
 }  
 
 .list-group {
-  display: none !important;
+  display: none ;
+  overflow: hidden !important;
+  height: 0 !important;
 }
 
 .white-bg {
@@ -31,4 +35,9 @@
 .show-modal {
   visibility : visible;
   opacity : 1;
+}
+
+.main-bg {
+  padding: 100px 20px;
+  background: lightgray;
 }

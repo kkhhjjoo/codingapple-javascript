@@ -14,7 +14,16 @@
   <div class="black-bg">
     <div class="white-bg">
       <h4>로그인하세요</h4>
-      <button class="btn btn-danger" id="close">닫기</button>
+      <form action="success.html">
+        <div class="my-3">
+          <input type="text" class="form-control" id="email">
+        </div>
+        <div class="my-3">
+          <input type="password" class="form-control" id="password">
+        </div>
+        <button type="submit" class="btn btn-primary" id="submit">전송</button>
+        <button type="button" class="btn btn-danger" id="close">닫기</button>
+      </form>
     </div>
   </div>
 
@@ -36,7 +45,11 @@
   <li class="list-group-item">And a fifth one</li>
 </ul> 
 
-<button type="button" class="btn btn-primary" id="login">로그인</button>
+
+<div class="main-bg">
+  <h4>Shirts on Sale</h4>
+  <button type="button" class="btn btn-primary" id="login">로그인</button>
+</div>
 
   <div class="modal" tabindex="-1">
   <div class="modal-dialog">
@@ -58,12 +71,50 @@
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 <script>
+  // $('#login').on('click', function() {
+    // $('.black-bg').addClass('show-modal');
+  // });
+
 
   $('#login').on('click', function() {
     $('.black-bg').css('visibility', 'visible').css('opacity', '1');
   });
   $('#close').on('click', function() {
     $('.black-bg').css('visibility', 'hidden').css('opacity', '0');
+  });
+
+
+    $('.navbar-toggler').on('click', function() {
+    $('.list-group').toggleClass('show');
+  });
+
+  let input1 = document.querySelector('.form-control[type="text"]');
+  let input2 = document.querySelector('.form-control[type="password"]');
+
+  document.querySelector('#submit').addEventListener('click', function(e) {
+    if(input1.value === '') {
+      e.preventDefault();
+      alert('아이디를 입력해주세요');
+    } else if(input2.value === '') {
+      e.preventDefault();
+      alert('비밀번호를 입력해주세요');
+    } else if (input2.value.length < 6) {
+      e.preventDefault();
+      alert('비밀번호를 더 길게 입력해주세요');
+    }
+  });  
+
+  if (1 == 3) {
+    console.log('맞아요1');
+  } else if (3 == 3) {
+    console.log('맞아요2');
+  } else {
+
+  }
+  
+
+  document.querySelector('#email').addEventListener('change', function() {
+    console.log('안녕');
   });
 </script>
 </body>
