@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function 합격했냐(a, b) {
+      if(a < 40 || b < 40) {
+        console.log('불합격');
+      } else if(a + b >= 120) {
+        console.log('합격');
+      } else {
+        console.log('불합격');
+      }
+    }
+
+    합격했냐(70,70);
+    합격했냐(30,100);
+    합격했냐(50,50);
+  </script>
+</body>
+</html>

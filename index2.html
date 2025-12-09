@@ -10,7 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
   
 </head>
-<body>
+<body class="dark">
   <div class="black-bg">
     <div class="white-bg">
       <h4>로그인하세요</h4>
@@ -28,9 +28,10 @@
   </div>
 
 
-  <nav class="navbar navbar-light bg-light">
+  <nav class="navbar navbar-dark bg-dark">
   <div class="container-fluid">
-    <span class="navbar-brand">Navbar</span>
+    <span class="navbar-brand">JS Shop</span>
+    <span class="badge bg-dark">Dark 🔄</span>
     <button class="navbar-toggler" type="button">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -116,6 +117,28 @@
   document.querySelector('#email').addEventListener('change', function() {
     console.log('안녕');
   });
+
+  let clickCount = 0;
+  const badge = document.querySelector('.badge');
+  badge.addEventListener('click', function() {
+    clickCount++;
+
+    if(clickCount % 2 === 1) {
+      // badge.textContent = 'Light 🔄';
+      badge.innerHTML = 'Light 🔄';
+    }else if (clickCount % 2 === 0) {
+      // badge.textContent = 'Dark 🔄';
+      badge.innerHTML = 'Dark 🔄';
+    }  
+  });
+
+  function 함수() {
+    let 이름 = 'kim';
+    console.log(이름);
+  }
+
+  함수();
+  
 </script>
 </body>
 </html>
