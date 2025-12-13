@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    document.querySelector('form').addEventListener('submit', function(e) {
+      let 비번 = document.querySelector('#pw').value;
+      if(/[A-Z]/.test(비번) === false) {
+        alert('대문자 없는데여');
+      }
+    });
+  </script>
+</body>
+</html>

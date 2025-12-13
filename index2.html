@@ -52,6 +52,8 @@
   <button type="button" class="btn btn-primary" id="login">로그인</button>
 </div>
 
+<div class="alert alert-danger"><span id="num">5</span>초 이내 구매시 사은품 증정!</div>
+
   <div class="modal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -138,7 +140,19 @@
   }
 
   함수();
-  
+
+
+  setTimeout(() => {
+    document.querySelector('.alert').style.display= 'none';
+  }, 5000);
+
+  let count = 5;
+  setInterval(() => {
+    count--;
+    if (count >=0) {
+      document.querySelector('#num').innerHTML = count;
+    }
+  }, 1000);
 </script>
 </body>
 </html>
