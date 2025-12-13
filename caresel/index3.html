@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div style="overflow: hidden">
+    <div class="slide-container">
+      <div class="slide-box" id="slide-1">
+        <img src="img/car1-1.png" alt="" />
+      </div>
+      <div class="slide-box" id="slide-2">
+        <img src="img/car2-1.png" alt="" />
+      </div>
+      <div class="slide-box" id="slide-3">
+        <img src="img/car3-1.png" alt="" />
+      </div>
+    </div>
+  </div>
+
+  <button class="slide-1">1</button>
+  <button class="slide-2">2</button>
+  <button class="slide-3">3</button>
+  <button class="prev">이전</button>
+  <button class="next">다음</button>
+
+  <script>
+    const button1 = document.querySelector('.slide-1');
+    const button2 = document.querySelector('.slide-2');
+    const button3 = document.querySelector('.slide-3');
+    const next = document.querySelector('.next');
+    const prev = document.querySelector('.prev');
+    const slideBox = document.querySelector('.slide-box');
+    const slideContainer = document.querySelector('.slide-container')
+
+    button1.addEventListener('click', function() {
+      slideContainer.style.transform = 'translateX(0)';
+    });
+    button2.addEventListener('click', function() {
+      slideContainer.style.transform = 'translateX(-100vw)';
+    });
+    button3.addEventListener('click', function() {
+      slideContainer.style.transform = 'translateX(-200vw)';
+    });
+    
+
+    let count = 0; //0,1,2
+
+    next.addEventListener('click', function() {
+      if(count < 2) {
+        count++;
+        slideContainer.style.transform = `translateX(-${count*100}vw)`;  
+      }
+    });
+
+    prev.addEventListener('click', function() {
+      if(count > 0) {
+        count--;
+        slideContainer.style.transform = `translateX(-${count}00vw)`;
+      }
+    });
+
+    
+  </script>
+</body>
+</html>
