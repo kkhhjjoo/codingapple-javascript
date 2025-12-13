@@ -29,10 +29,10 @@
 
 
   <nav class="navbar navbar-dark bg-dark">
-  <div class="container-fluid">
-    <span class="navbar-brand">JS Shop</span>
-    <span class="badge bg-dark">Dark 🔄</span>
-    <button class="navbar-toggler" type="button">
+    <div class="container-fluid">
+      <span class="navbar-brand">JS Shop</span>
+      <span class="badge bg-dark">Dark 🔄</span>
+      <button class="navbar-toggler" type="button">
       <span class="navbar-toggler-icon"></span>
     </button>
   </div>
@@ -52,6 +52,14 @@
   <button type="button" class="btn btn-primary" id="login">로그인</button>
 </div>
 
+<div class="lorem" style="width:200px; height: 100px; overflow-y: scroll;">
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, repellendus? Totam, corporis eos, cum, fuga cupiditate sequi inventore nam aperiam id alias aliquam ratione nesciunt sint quidem voluptas saepe repudiandae!
+</div>
+
+<div class="box"></div>
+
+
+<div style="height: 1000px;"></div>
 <div class="alert alert-danger"><span id="num">5</span>초 이내 구매시 사은품 증정!</div>
 
   <div class="modal" tabindex="-1">
@@ -153,6 +161,52 @@
       document.querySelector('#num').innerHTML = count;
     }
   }, 1000);
+
+const font = document.querySelector('.navbar-brand');
+const nav = document.querySelector('nav');
+  window.addEventListener('scroll', function() {
+    if(window.scrollY >= 100){
+      nav.style.position = 'fixed';
+      font.style.fontSize = '20px';
+      font.style.transition = 'all 1s';
+    }else {
+      font.style.fontSize = '30px';
+      font.style.transition = 'all 1s';
+    }
+});
+
+const lorem = document.querySelector('.lorem');
+
+//div의 스크롤바 내린 양 + 눈에 보이는 div높이 == div의 실제 높이
+lorem.addEventListener('scroll', function() {
+  let 스크롤양 = lorem.scrollTop;
+  let 실제높이 = lorem.scrollHeight;
+  let 높이 = lorem.clientHeight;
+
+  if(스크롤양 + 높이 > 실제높이 - 10) {
+    alert('다 읽음');
+  } 
+});
+
+
+window.addEventListener('scroll', function() {
+  let 실제높이 = document.querySelector('html').scrollHeight;
+  let 높이 = document.querySelector('html').clientHeight;
+  let 스크롤양 = window.scrollY;
+    if(스크롤양 + 높이 > 실제높이 - 10) {
+    alert('다 읽음');
+  }
+});
+let box = document.querySelector('.box');
+window.addEventListener('scroll', function() {
+  
+  let 실제높이 = document.querySelector('html').scrollHeight;
+  let 높이 = document.querySelector('html').clientHeight;
+  let 스크롤양 = window.scrollY;
+  let 스크롤진행률 = ((스크롤양 + 높이)/ 실제높이) * 100;
+
+  box.style.width = 스크롤진행률 + '%';
+});
 </script>
 </body>
 </html>
