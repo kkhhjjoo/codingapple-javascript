@@ -99,6 +99,13 @@
     $('.list-group').toggleClass('show');
   });
 
+
+$('.black-bg').on('click', function(e) {
+  if(e.target === this) {
+    $('.black-bg').css('visibility', 'hidden').css('opacity', '0')
+  };
+});
+
   let input1 = document.querySelector('.form-control[type="text"]');
   let input2 = document.querySelector('.form-control[type="password"]');
 
@@ -206,7 +213,30 @@ window.addEventListener('scroll', function() {
   let 스크롤진행률 = ((스크롤양 + 높이)/ 실제높이) * 100;
 
   box.style.width = 스크롤진행률 + '%';
+
+
+  
 });
+
+
+
+// 모달 열기
+  document.querySelector('#login').addEventListener('click', function() {        
+    document.querySelector('.black-bg').classList.add('show-modal');
+  });
+
+// 모달 닫기
+document.querySelector('.black-bg').addEventListener('click', function(e) {
+  console.log(e.target);
+  if(e.target === this) {
+    document.querySelector('.black-bg').classList.remove('show-modal');
+  }
+});
+
+//e.target; 유저가 실제로 누른거
+//e.currentTarget; 이벤트 리스너 달린 곳 === this;
+//e.preventDefault();
+// e.stopPropagation();
 </script>
 </body>
 </html>
