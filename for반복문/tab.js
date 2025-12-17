@@ -6,18 +6,34 @@ const tabContent = document.querySelectorAll('.tab-content');
 // - 버튼 0에 orange 클래스명 추가
 // - 모든 div에 붙은 show클래스명 제거
 // - div0에 show 클래스명 추가
-for (let i = 0; i < tabButton.length; i++) {
-  tabButton[i].addEventListener('click', function () {
-  tabButton.forEach(function (btn) {
-    btn.classList.remove('orange');
-   });
-  tabContent.forEach(function (content) {
-    content.classList.remove('show');
+
+// for (let i = 0; i < tabButton.length; i++) {
+//   tab(i);
+// }
+
+document.querySelector('.list').addEventListener('click', function (e) {
+  // if (e.target === tabButton[0]) {
+  //   tab(0);
+  // } else if (e.target === tabButton[1]) {
+  //   tab(1);
+  // } else if (e.target === tabButton[2]) { 
+  //   tab(2);
+  // }
+  tab(e.target.dataset.id);
+})
+
+function tab(숫자) {
+  tabButton[숫자].addEventListener('click', function () {
+    tabButton.forEach(function (btn) {
+      btn.classList.remove('orange');
+    });
+    tabContent.forEach(function (content) {
+      content.classList.remove('show');
+    });
+    tabButton[숫자].classList.add('orange');
+    tabContent[숫자].classList.add('show');
   });
-  tabButton[i].classList.add('orange');
-  tabContent[i].classList.add('show');
-});
-} 
+}
  
 // tabButton[1].addEventListener('click', function () {
 //   tabButton.forEach(function (btn) {
